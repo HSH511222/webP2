@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기 만들기</title>
+    <script>
+        let exp;
+        window.onload = function(){
+            exp = document.getElementById("exp");
+            
+        }
+        function calc(){
+            exp.value = eval(exp.value);
+        }
+        function inputValue(obj){
+            if(exp.value == 0){
+                exp.value = null;
+            }
+            exp.value += obj.value;
+        }
+        function reset(){
+            exp.value='0'
+        }
+        function backspace(){
+            exp.value=exp.value.slice(0,-1);
+        }
+    </script>
+</head>
+
+<body>
+    <p>계산기 만들기</p>
+    <hr>
+    <form>
+        <input type="text" id="exp" value="0">
+    </form>
+    <br>
+    <input type = "button" style="width: 80px; height: 30px;" value="back" onclick="backspace(this)">
+    <input type = "button" style="width: 80px; height: 30px;" value="CE" onclick="reset(this)">
+    <input type = "button" style="width: 80px; height: 30px;" value="C" onclick="reset(this)">
+    <input type = "button" style="width: 80px; height: 30px;" value="=" onclick="calc(this)">
+    <br>
+    <input type = "button" style="width: 80px; height: 30px;" value="7" onclick="inputValue(this)">
+    <input type = "button" style="width: 80px; height: 30px;" value="8" onclick="inputValue(this)">
+    <input type = "button" style="width: 80px; height: 30px;" value="9" onclick="inputValue(this)">
+    <input type = "button" style="width: 80px; height: 30px;" value="/" onclick="inputValue(this)">
+    <br>
+    <input type = "button" style="width: 80px; height: 30px;" value="4" onclick="inputValue(this)">
+    <input type = "button" style="width: 80px; height: 30px;" value="5" onclick="inputValue(this)">
+    <input type = "button" style="width: 80px; height: 30px;" value="6" onclick="inputValue(this)">
+    <input type = "button" style="width: 80px; height: 30px;" value="*" onclick="inputValue(this)">
+    <br>
+    <input type = "button" style="width: 80px; height: 30px;" value="1" onclick="inputValue(this)">
+    <input type = "button" style="width: 80px; height: 30px;" value="2" onclick="inputValue(this)">
+    <input type = "button" style="width: 80px; height: 30px;" value="3" onclick="inputValue(this)">
+    <input type = "button" style="width: 80px; height: 30px;" value="-" onclick="inputValue(this)">
+    <br>
+    <input type = "button" style="width: 80px; height: 30px;" value="0" onclick="inputValue(this)">
+    <input type = "button" style="width: 80px; height: 30px;" value="+" onclick="inputValue(this)">
+    <input type = "button" style="width: 80px; height: 30px;" value="NONE">
+    <input type = "button" style="width: 80px; height: 30px;" value="NONE">
+</body>
+</html>
