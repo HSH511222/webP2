@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>week 3</title>
+    <script>
+        function register(){
+            this.nStudent++;
+        }
+    </script>
+</head>
+<body>
+    <h1>1. 직접 객체 만들기</h1>
+    <script>
+        let crs1 = new Object();
+        crs1.korName = "웹프로그래밍";
+        crs1.engName = "web programming";
+        crs1.classCode = "V024003";
+        crs1.nStudent = 0;
+        crs1.register = register;
+        vrs1.unregister = function() {
+            this.nStudent--;
+        }
+        crs1.getStudentCount = function (){
+            return this.nStudent;
+        }
+
+
+
+        document.write("교과목 이름 =",crs1.korName, <br>);
+        document.write("등록 학생 수 = ",crs1.engName, "<br>");
+        document.write("등록 학생 수 = ", crs1.getStudentCount(), "<br>");
+        crs1.register();
+        document.write("after register, 등록 학생 수 = ", crs1.getStudentCount, "<br>")
+
+        document.write("<hr>");
+    </script>
+
+
+
+
+    <script>
+        let crs2 = {
+        korName = "웹프로그래밍";
+        engName = "web programming";
+        classCode = "V024003";
+        nStudent = 0;
+        register = register;
+        unregister = function(){
+            this.nStudent--;
+
+        },
+        getStudentCount : function(){
+            return this.nStudent;
+        }
+           
+        }
+        let name = new String("웹프로그래밍");
+        document.write("교과목 이름 = "+ name + "<br>");
+
+        document.write("교과목 이름 =",crs2.korName, <br>);
+        document.write("등록 학생 수 = ",crs2.engName, "<br>");
+        document.write("등록 학생 수 = ", crs2.getStudentCount(), "<br>");
+        crs1.register();
+        document.write("after register, 등록 학생 수 = ", crs2.getStudentCount, "<br>")
+
+        document.write("<hr>");
+    </script>
+
+     <let ret = prompt("교과목 이름 =", "웹프로그래밍");></let>
+      <br>
+      <h1>2. 리터럴 표기법</h1>
+       var student2 = {
+         name : "웹프로그래밍", number : 0, 
+          introduce(){
+              console.log('교과목 이름 =' + this.name + '등록 학생수 ='+ this.number + "");
+         }
+     };
+    
+</body>
+</html>
