@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습문제 10-6</title>
+    <script>
+        let timer;
+        function stop_start_Clock(){
+            console.log('stop timer');
+            clearInterval(timer);
+            timer = null;
+        }
+        
+    </script>
+    
+</head>
+<body>
+    <h3>div 태그에 시계 만들기</h3>
+    <p>시계를 클릭하면 시계가 멈추고 다시 클릭하면 가기 시작한다.</p>
+    <hr>
+    <div id ="div" onclick="stop_start_Clock();">
+
+    </div>
+    <script>
+        let div = document.getElementById('div');
+        let now = new Date();
+        //setInterval('showTime();', 1000);
+        showTime();
+
+        function showTime() {
+            now = new Date();
+            div.innerHTML = now.toLocaleTimeString();
+            timer = setTimeout('showTime();', 1000);
+        }
+    </script>
+</body>
+</html>
